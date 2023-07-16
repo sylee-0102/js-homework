@@ -26,7 +26,12 @@ function naverLoginId(loginId) {
     return true;
   }
 }
+```
+이메일 유효성 검사, 'emailReg'조건이 통과가 안되면 'is--invalid'실행
 
+</br>
+
+```js
 
 function naverLoginPw(loginPw) {
 
@@ -41,7 +46,11 @@ function naverLoginPw(loginPw) {
     return true;
   }
 }
+```
+비밀번호 유효성 검사, 'pwReg'조건이 통과가 안되면 'is--invalid'실행
+</br>
 
+```js
 
 function naverLoginBtn(loginId, loginPw) {
 
@@ -59,40 +68,27 @@ function naverLoginBtn(loginId, loginPw) {
     alert( '넌 잘못됐어. 다시해.' );
   }
 }
-
-
-function naverLoginPage() {
-
-  let loginId = document.querySelector("#userEmail");
-  let loginPw = document.querySelector("#userPassword");
-
-  if (!naverLoginId(loginId)){
-    return;
-  }
-
-  if (!naverLoginPw(loginPw)) {
-    return;
-  }
-
-  naverLoginBtn(loginId, loginPw);
-
-}
-
-
-function emailReg(text){
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(text).toLowerCase())
-}
-
-function pwReg(text){
-  const re = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{6,16}$/;
-  return re.test(String(text).toLowerCase());
-}
-
 ```
+이메일, 비밀번호가 'user'값과 일치했을 경우 다음페이지로 이동,
+둘 중 한개의 값이라도 일치하지 않을 경우 alert창 띄우기
+</br>
 
+---
 
+<!-- Quote -->
+## 결과화면
 
+<!-- Image -->
+###### 조건에 맞지않는 아이디 입력
+![아이디 잘못 입력했을 때](./images/homework/js-mission01-01.png)
 
+###### 조건에 맞지않는 비밀번호 입력
+![비밀번호 잘못 입력했을 때](./images/homework/js-mission01-02.png)
+
+###### emailReg와 pwReg 조건에는 맞지만 user값과 일치하지않을 때
+![user값과 일치하지 않을 때](./images/homework/js-mission01-03.png)
+
+###### 모든 조건 통과
+![모든 조건 통과](./images/homework/js-mission01-04.png)
 
 
